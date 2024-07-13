@@ -7,6 +7,6 @@ public class CandidateFileOperator extends AbstractFileOperator<Candidate> {
 
     @Override
     protected Candidate parseLine(String line) {
-        return new Candidate();
+        return Candidate.parse(line);
     }
 }
