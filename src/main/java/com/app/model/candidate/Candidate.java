@@ -12,6 +12,11 @@ public class Candidate {
     int numOfVotes;
     final String electoralDistrict;
 
+
+    public void increaseVotes() {
+        numOfVotes++;
+    }
+
     public static Candidate parse(String line) {
         var splitted = line.split(";");
         return new Candidate(splitted[0], splitted[1], Integer.parseInt(splitted[2]),
