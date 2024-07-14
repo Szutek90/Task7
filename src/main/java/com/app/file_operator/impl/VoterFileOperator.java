@@ -6,6 +6,6 @@ import com.app.model.voter.Voter;
 public class VoterFileOperator extends AbstractFileOperator<Voter> {
     @Override
     protected Voter parseLine(String line) {
-        return new Voter();
+        return Voter.parse(line);
     }
 }

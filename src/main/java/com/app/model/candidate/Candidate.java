@@ -1,10 +1,7 @@
 package com.app.model.candidate;
 
-import lombok.RequiredArgsConstructor;
-
 import java.util.Objects;
 
-@RequiredArgsConstructor
 public class Candidate {
     final String name;
     final String surname;
@@ -12,9 +9,16 @@ public class Candidate {
     int numOfVotes;
     final String electoralDistrict;
 
+    public Candidate(String name, String surname, int id, String electoralDistrict) {
+        this.name = name;
+        this.surname = surname;
+        this.id = id;
+        numOfVotes = 0;
+        this.electoralDistrict = electoralDistrict;
+    }
 
     public void increaseVotes() {
-        numOfVotes++;
+        numOfVotes ++;
     }
 
     public static Candidate parse(String line) {
@@ -53,3 +57,4 @@ public class Candidate {
         return result;
     }
 }
+
