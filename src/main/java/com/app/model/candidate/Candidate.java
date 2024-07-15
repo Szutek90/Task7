@@ -1,7 +1,12 @@
 package com.app.model.candidate;
 
-import java.util.Objects;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
+@RequiredArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class Candidate {
     final String name;
     final String surname;
@@ -9,16 +14,8 @@ public class Candidate {
     int numOfVotes;
     final String electoralDistrict;
 
-    public Candidate(String name, String surname, int id, String electoralDistrict) {
-        this.name = name;
-        this.surname = surname;
-        this.id = id;
-        numOfVotes = 0;
-        this.electoralDistrict = electoralDistrict;
-    }
-
     public void increaseVotes() {
-        numOfVotes ++;
+        numOfVotes++;
     }
 
     public static Candidate parse(String line) {
@@ -27,34 +24,5 @@ public class Candidate {
                 splitted[3]);
     }
 
-    @Override
-    public String toString() {
-        return "Candidate{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", id=" + id +
-                ", numOfVotes=" + numOfVotes +
-                ", electoralDistrict='" + electoralDistrict + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Candidate candidate = (Candidate) o;
-        return id == candidate.id && numOfVotes == candidate.numOfVotes && Objects.equals(name, candidate.name) && Objects.equals(surname, candidate.surname) && Objects.equals(electoralDistrict, candidate.electoralDistrict);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = Objects.hashCode(name);
-        result = 31 * result + Objects.hashCode(surname);
-        result = 31 * result + id;
-        result = 31 * result + numOfVotes;
-        result = 31 * result + Objects.hashCode(electoralDistrict);
-        return result;
-    }
 }
 
