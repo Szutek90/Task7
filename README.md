@@ -15,3 +15,13 @@ The project allows for an election simulation in which voters vote for candidate
 ## Jacoco Coverage
 
 ![App Screenshot](src/test/resources/jacoco_raport.PNG)
+
+## Required files
+
+* Candidates file with pattern:
+
+  name;surname;id;district
+
+* Voters with pattern:
+
+  id;district

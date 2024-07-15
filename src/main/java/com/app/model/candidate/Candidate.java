@@ -11,7 +11,7 @@ public class Candidate {
     final String name;
     final String surname;
     final int id;
-    int numOfVotes;
+    int numOfVotes = 0;
     final String electoralDistrict;
 
     public void increaseVotes() {
